@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<!--[if IE 6]><html class="ie lt-ie8"><![endif]-->
+<!--[if IE 7]><html class="ie lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="ie ie8"><![endif]-->
+<!--[if IE 9]><html class="ie ie9"><![endif]-->
+<!--[if !IE]><!--> <html> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"1255494d3a","applicationID":"15702971","transactionName":"e1daR0JWVV9RER9CRl1KRxxDUVZE","queueTime":0,"applicationTime":68,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta property="wb:webmaster" content="294ec9de89e7fadb" />
+  <meta property="qc:admins" content="104102651453316562112116375" />
+  <meta property="qc:admins" content="11635613706305617" />
+  <meta property="qc:admins" content="1163561616621163056375" />
+  <meta name="google-site-verification" content="cV4-qkUJZR6gmFeajx_UyPe47GW9vY6cnCrYtCHYNh4" />
+  <meta name="google-site-verification" content="HF7lfF8YEGs1qtCE-kPml8Z469e2RHhGajy6JPVy5XI" />
+  <meta http-equiv="mobile-agent" content="format=html5; url=http://www.jianshu.com/u/77cd37f5fa75">
+
+  <!-- Apple -->
+  <meta name="apple-mobile-web-app-title" content="简书">
+
+  
+
+    <title>hukx_michael - 简书</title>
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="uAmOvzG9Jxq1qEZtqLK4+KmJ0HeXwpUmR94ZCGkYBhUpqBrCl71G24EH5juLtr5uxcFTCd49XITjfcH74lpIaA==" />
+
+  <link rel="stylesheet" media="all" href="//cdn2.jianshu.io/assets/web-0d148d70f9a0d5c28ba2.css" />
+  
+  <link rel="stylesheet" media="all" href="//cdn2.jianshu.io/assets/web/pages/users/show/entry-0d148d70f9a0d5c28ba2.css" />
+
+  <link href="//cdn2.jianshu.io/assets/favicons/favicon-783beb88ed621ceab614de960376ac0c.ico" rel="icon">
+      <link rel="apple-touch-icon-precomposed" href="//cdn2.jianshu.io/assets/apple-touch-icons/57-47624b2e2161e8eb144462c85db0a5ff.png" sizes="57x57" />
+      <link rel="apple-touch-icon-precomposed" href="//cdn2.jianshu.io/assets/apple-touch-icons/72-c00cde7cf98fc49e50cbb3ee1dcd5804.png" sizes="72x72" />
+      <link rel="apple-touch-icon-precomposed" href="//cdn2.jianshu.io/assets/apple-touch-icons/76-e8af0bdeaf1ba31e303b1fde8b5e66c4.png" sizes="76x76" />
+      <link rel="apple-touch-icon-precomposed" href="//cdn2.jianshu.io/assets/apple-touch-icons/114-f4c78569bbf1977e8382a5fd90c9237a.png" sizes="114x114" />
+      <link rel="apple-touch-icon-precomposed" href="//cdn2.jianshu.io/assets/apple-touch-icons/120-cf10c3711dba269522743729efe66bbc.png" sizes="120x120" />
+      <link rel="apple-touch-icon-precomposed" href="//cdn2.jianshu.io/assets/apple-touch-icons/152-7bd60457b5f3ecbf1343f0e6241be4f8.png" sizes="152x152" />
+</head>
+
+  <body lang="zh-CN" class="reader-black-font">
+    <!-- 全局顶部导航栏 -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="width-limit">
+    <!-- 左上方 Logo -->
+    <a class="logo" href="/"><img src="//cdn2.jianshu.io/assets/web/logo-58fd04f6f0de908401aa561cda6a0688.png" alt="Logo" /></a>
+
+    <!-- 右上角 -->
+      <!-- 未登录显示登录/注册/写文章 -->
+      <a class="btn write-btn" target="_blank" href="/writer#/">
+        <i class="iconfont ic-write"></i>写文章
+</a>      <a class="btn sign-up" href="/sign_up">注册</a>
+      <a class="btn log-in" href="/sign_in">登录</a>
+
+    <!-- 如果用户登录，显示下拉菜单 -->
+
+    <div id="view-mode-ctrl">
+    </div>
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="nav navbar-nav">
+            <li class="">
+              <a href="/">
+                <span class="menu-text">首页</span><i class="iconfont ic-navigation-discover menu-icon"></i>
+</a>            </li>
+            <li class="">
+              <a class="app-download-btn" href="/apps"><span class="menu-text">下载App</span><i class="iconfont ic-navigation-download menu-icon"></i></a>
+            </li>
+          <li class="search">
+            <form target="_blank" action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+              <input type="text" name="q" id="q" value="" placeholder="搜索" class="search-input" />
+              <a class="search-btn" href="javascript:void(null)"><i class="iconfont ic-search"></i></a>
+              <!-- <div id="navbar-trending-search"></div> -->
+</form>          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+    
+
+<div class="container person">
+  <div class="row">
+    <div class="col-xs-16 main">
+      <div class="main-top">
+  <a class="avatar" href="/u/77cd37f5fa75">
+    <img src="//upload.jianshu.io/users/upload_avatars/3340699/a4a3f5e6-e66c-4aac-8d06-02535f30d839.png?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240" alt="240" />
+</a>
+    <div class="follow-button" props-data-user-id="3340699" props-data-following="false"></div>
+    <a class="btn btn-hollow" href="/notifications#/chats/new?mail_to=3340699">发简信</a>
+
+  <div class="title">
+    <a class="name" href="/u/77cd37f5fa75">hukx_michael</a>
+  </div>
+  <div class="info">
+    <ul>
+      <li>
+        <div class="meta-block">
+          <a href="/users/77cd37f5fa75/following">
+            <p>2</p>
+            关注 <i class="iconfont ic-arrow"></i>
+</a>        </div>
+      </li>
+      <li>
+        <div class="meta-block">
+          <a href="/users/77cd37f5fa75/followers">
+            <p>10</p>
+            粉丝 <i class="iconfont ic-arrow"></i>
+</a>        </div>
+      </li>
+      <li>
+        <div class="meta-block">
+          <a href="/u/77cd37f5fa75">
+            <p>10</p>
+            文章 <i class="iconfont ic-arrow"></i>
+</a>        </div>
+      </li>
+      <li>
+        <div class="meta-block">
+          <p>4100</p>
+          <div>字数</div>
+        </div>
+      </li>
+      <li>
+        <div class="meta-block">
+          <p>24</p>
+          <div>收获喜欢</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+      <ul class="trigger-menu" data-pjax-container="#list-container"><li class="active"><a href="/u/77cd37f5fa75?order_by=shared_at"><i class="iconfont ic-articles"></i> 文章</a></li><li class=""><a href="/users/77cd37f5fa75/timeline"><i class="iconfont ic-feed"></i> 动态</a></li><li class=""><a href="/u/77cd37f5fa75?order_by=commented_at"><i class="iconfont ic-latestcomments"></i> 最新评论</a></li><li class=""><a href="/u/77cd37f5fa75?order_by=top"><i class="iconfont ic-hot"></i> 热门</a></li></ul>
+
+      <div id="list-container">
+        <!-- 文章列表模块 -->
+<ul class="note-list" infinite-scroll-url="/u/77cd37f5fa75?order_by=shared_at">
+    <li id="note-11908341" data-note-id="11908341" class="have-img">
+    <a class="wrap-img" href="/p/aeb09ef4f01a" target="_blank">
+      <img src="//upload-images.jianshu.io/upload_images/3340699-03274c7a781a330d.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/375/h/300" alt="300" />
+    </a>
+  <div class="content">
+    <div class="author">
+      <a class="avatar" target="_blank" href="/u/77cd37f5fa75">
+        <img src="//upload.jianshu.io/users/upload_avatars/3340699/a4a3f5e6-e66c-4aac-8d06-02535f30d839.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96" alt="96" />
+</a>      <div class="name">
+        <a class="blue-link" target="_blank" href="/u/77cd37f5fa75">hukx_michael</a>
+        <span class="time" data-shared-at="2017-05-18T11:07:27+08:00"></span>
+      </div>
+    </div>
+    <a class="title" target="_blank" href="/p/aeb09ef4f01a">教务处考试系统自动答题</a>
+    <p class="abstract">
+      学校要求登录教务处网站做一个测试题，我做了看了看，30分钟300道题，240分几个，题量不少，题还不好做。研究了一下发现原来在网站上就有题库的，但是一道题只有6s 的时间作答...
+    </p>
+    <div class="meta">
+      <a target="_blank" href="/p/aeb09ef4f01a">
+        <i class="iconfont ic-list-read"></i> 136
+</a>        <a target="_blank" href="/p/aeb09ef4f01a#comments">
+          <i class="iconfont ic-list-comments"></i> 1
+</a>      <span><i class="iconfont ic-list-like"></i> 8</span>
+    </div>
+  </div>
+</li>
+
+    <li id="note-12224421" data-note-id="12224421" class="">
+  <div class="content">
+    <div class="author">
+      <a class="avatar" target="_blank" href="/u/77cd37f5fa75">
+        <img src="//upload.jianshu.io/users/upload_avatars/3340699/a4a3f5e6-e66c-4aac-8d06-02535f30d839.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96" alt="96" />
+</a>      <div class="name">
+        <a class="blue-link" target="_blank" href="/u/77cd37f5fa75">hukx_michael</a>
+        <span class="time" data-shared-at="2017-05-09T20:55:20+08:00"></span>
+      </div>
+    </div>
+    <a class="title" target="_blank" href="/p/2bbf15db8dda">使用Flask-RESTful 设计 RESTful API</a>
+    <p class="abstract">
+      Flask-RESTful 提供了一个Resource基础类，能够定义一个给定URL的一个或者多个HTTP方法。 上一篇TODO list应用改用Flask_RESTful的...
+    </p>
+    <div class="meta">
+      <a target="_blank" href="/p/2bbf15db8dda">
+        <i class="iconfont ic-list-read"></i> 26
+</a>        <a target="_blank" href="/p/2bbf15db8dda#comments">
+          <i class="iconfont ic-list-comments"></i> 1
+</a>      <span><i class="iconfont ic-list-like"></i> 3</span>
+    </div>
+  </div>
+</li>
+
+    <li id="note-12187584" data-note-id="12187584" class="">
+  <div class="content">
+    <div class="author">
+      <a class="avatar" target="_blank" href="/u/77cd37f5fa75">
+        <img src="//upload.jianshu.io/users/upload_avatars/3340699/a4a3f5e6-e66c-4aac-8d06-02535f30d839.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96" alt="96" />
+</a>      <div class="name">
+        <a class="blue-link" target="_blank" href="/u/77cd37f5fa75">hukx_michael</a>
+        <span class="time" data-shared-at="2017-05-09T16:02:33+08:00"></span>
+      </div>
+    </div>
+    <a class="title" target="_blank" href="/p/eb6be4f0c6eb">RESTful API  的Flask手动实现</a>
+    <p class="abstract">
+      RESTful web services 概念的核心就是“资源”。资源可以用URI来表示。客户端使用HTTP协议定义的方法来发送请求到这些URIs，导致这些被访问的资源状态改...
+    </p>
+    <div class="meta">
+      <a target="_blank" href="/p/eb6be4f0c6eb">
+        <i class="iconfont ic-list-read"></i> 71
+</a>        <a target="_blank" href="/p/eb6be4f0c6eb#comments">
+          <i class="iconfont ic-list-comments"></i> 0
+</a>      <span><i class="iconfont ic-list-like"></i> 5</span>
+    </div>
+  </div>
+</li>
+
+    <li id="note-11434393" data-note-id="11434393" class="">
+  <div class="content">
+    <div class="author">
+      <a class="avatar" target="_blank" href="/u/77cd37f5fa75">
+        <img src="//upload.jianshu.io/users/upload_avatars/3340699/a4a3f5e6-e66c-4aac-8d06-02535f30d839.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96" alt="96" />
+</a>      <div class="name">
+        <a class="blue-link" target="_blank" href="/u/77cd37f5fa75">hukx_michael</a>
+        <span class="time" data-shared-at="2017-04-24T10:31:27+08:00"></span>
+      </div>
+    </div>
+    <a class="title" target="_blank" href="/p/e70eb8133362">《redis实战》笔记—— 数据结构及其命令</a>
+    <p class="abstract">
+      概述 redis 可以存储键与 5 种不同数据结构类型之间的映射，分别为 STRING(字符串), LIST(列表), SET(集合), HASH(散列), ZSET(有序集...
+    </p>
+    <div class="meta">
+      <a target="_blank" href="/p/e70eb8133362">
+        <i class="iconfont ic-list-read"></i> 74
+</a>        <a target="_blank" href="/p/e70eb8133362#comments">
+          <i class="iconfont ic-list-comments"></i> 0
+</a>      <span><i class="iconfont ic-list-like"></i> 3</span>
+    </div>
+  </div>
+</li>
+
+    <li id="note-11426876" data-note-id="11426876" class="have-img">
+    <a class="wrap-img" href="/p/2a7666e10380" target="_blank">
+      <img src="//upload-images.jianshu.io/upload_images/3340699-f73f704239ea43d7.png?imageMogr2/auto-orient/strip|imageView2/1/w/375/h/300" alt="300" />
+    </a>
+  <div class="content">
+    <div class="author">
+      <a class="avatar" target="_blank" href="/u/77cd37f5fa75">
+        <img src="//upload.jianshu.io/users/upload_avatars/3340699/a4a3f5e6-e66c-4aac-8d06-02535f30d839.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96" alt="96" />
+</a>      <div class="name">
+        <a class="blue-link" target="_blank" href="/u/77cd37f5fa75">hukx_michael</a>
+        <span class="time" data-shared-at="2017-04-17T11:20:55+08:00"></span>
+      </div>
+    </div>
+    <a class="title" target="_blank" href="/p/2a7666e10380">Mac 下redis安装及与Python集成</a>
+    <p class="abstract">
+      终端执行brew install redis 来安装redis 安装完成后，执行 redis-server 启动redis服务，出现如下内容则安装成功：redis服务启动成功...
+    </p>
+    <div class="meta">
+      <a target="_blank" href="/p/2a7666e10380">
+        <i class="iconfont ic-list-read"></i> 40
+</a>        <a target="_blank" href="/p/2a7666e10380#comments">
+          <i class="iconfont ic-list-comments"></i> 0
+</a>      <span><i class="iconfont ic-list-like"></i> 4</span>
+    </div>
+  </div>
+</li>
+
+    <li id="note-11407750" data-note-id="11407750" class="">
+  <div class="content">
+    <div class="author">
+      <a class="avatar" target="_blank" href="/u/77cd37f5fa75">
+        <img src="//upload.jianshu.io/users/upload_avatars/3340699/a4a3f5e6-e66c-4aac-8d06-02535f30d839.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96" alt="96" />
+</a>      <div class="name">
+        <a class="blue-link" target="_blank" href="/u/77cd37f5fa75">hukx_michael</a>
+        <span class="time" data-shared-at="2017-04-16T21:01:39+08:00"></span>
+      </div>
+    </div>
+    <a class="title" target="_blank" href="/p/f6176973b56f">关于apt-get remove 与 apt-get purge</a>
+    <p class="abstract">
+      今天在Ubuntu服务器上安装supervisor，部署没成功想卸载重来，sudo apt-get remove supervisor  后发现配置文件还在，便手动删除了配置...
+    </p>
+    <div class="meta">
+      <a target="_blank" href="/p/f6176973b56f">
+        <i class="iconfont ic-list-read"></i> 28
+</a>        <a target="_blank" href="/p/f6176973b56f#comments">
+          <i class="iconfont ic-list-comments"></i> 0
+</a>      <span><i class="iconfont ic-list-like"></i> 0</span>
+    </div>
+  </div>
+</li>
+
+    <li id="note-11233920" data-note-id="11233920" class="">
+  <div class="content">
+    <div class="author">
+      <a class="avatar" target="_blank" href="/u/77cd37f5fa75">
+        <img src="//upload.jianshu.io/users/upload_avatars/3340699/a4a3f5e6-e66c-4aac-8d06-02535f30d839.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96" alt="96" />
+</a>      <div class="name">
+        <a class="blue-link" target="_blank" href="/u/77cd37f5fa75">hukx_michael</a>
+        <span class="time" data-shared-at="2017-04-11T22:53:27+08:00"></span>
+      </div>
+    </div>
+    <a class="title" target="_blank" href="/p/2cdeca2c5238">Flask Context Processors</a>
+    <p class="abstract">
+      我学习flask是跟着Miguel Grinberg的《Flask Web Development》上手的、书上都是选了一些更为方便实用的扩展包进行开发的，跟着书中的项目做下...
+    </p>
+    <div class="meta">
+      <a target="_blank" href="/p/2cdeca2c5238">
+        <i class="iconfont ic-list-read"></i> 0
+</a>        <a target="_blank" href="/p/2cdeca2c5238#comments">
+          <i class="iconfont ic-list-comments"></i> 0
+</a>      <span><i class="iconfont ic-list-like"></i> 0</span>
+    </div>
+  </div>
+</li>
+
+    <li id="note-11179680" data-note-id="11179680" class="">
+  <div class="content">
+    <div class="author">
+      <a class="avatar" target="_blank" href="/u/77cd37f5fa75">
+        <img src="//upload.jianshu.io/users/upload_avatars/3340699/a4a3f5e6-e66c-4aac-8d06-02535f30d839.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96" alt="96" />
+</a>      <div class="name">
+        <a class="blue-link" target="_blank" href="/u/77cd37f5fa75">hukx_michael</a>
+        <span class="time" data-shared-at="2017-04-10T17:44:51+08:00"></span>
+      </div>
+    </div>
+    <a class="title" target="_blank" href="/p/57d544acdc1f">flask + sqlalchemy 存储emoji</a>
+    <p class="abstract">
+        最近在用flask写一个web应用，需要存储用户发表的内容，可能含有 emoji 等内容，但是在存储的时候总是报错 (_mysql_exceptions.Operatio...
+    </p>
+    <div class="meta">
+      <a target="_blank" href="/p/57d544acdc1f">
+        <i class="iconfont ic-list-read"></i> 6
+</a>        <a target="_blank" href="/p/57d544acdc1f#comments">
+          <i class="iconfont ic-list-comments"></i> 0
+</a>      <span><i class="iconfont ic-list-like"></i> 0</span>
+    </div>
+  </div>
+</li>
+
+    <li id="note-11166471" data-note-id="11166471" class="">
+  <div class="content">
+    <div class="author">
+      <a class="avatar" target="_blank" href="/u/77cd37f5fa75">
+        <img src="//upload.jianshu.io/users/upload_avatars/3340699/a4a3f5e6-e66c-4aac-8d06-02535f30d839.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96" alt="96" />
+</a>      <div class="name">
+        <a class="blue-link" target="_blank" href="/u/77cd37f5fa75">hukx_michael</a>
+        <span class="time" data-shared-at="2017-04-10T11:25:18+08:00"></span>
+      </div>
+    </div>
+    <a class="title" target="_blank" href="/p/77a123482d8f">Flask request 模块概览</a>
+    <p class="abstract">
+      request.form 获取POST或PUT的数据, request.form[&#39;data_of_post_or_put&#39;] 为防止 request.form[&#39;key&#39;]...
+    </p>
+    <div class="meta">
+      <a target="_blank" href="/p/77a123482d8f">
+        <i class="iconfont ic-list-read"></i> 1
+</a>        <a target="_blank" href="/p/77a123482d8f#comments">
+          <i class="iconfont ic-list-comments"></i> 0
+</a>      <span><i class="iconfont ic-list-like"></i> 0</span>
+    </div>
+  </div>
+</li>
+
+</ul>
+
+      </div>
+    </div>
+    
+<div class="col-xs-7 col-xs-offset-1 aside">
+      <div class="title">个人介绍</div>
+  <div class="description">
+    <div class="js-intro">软件工程在校学生<br>希望从事 Python 后台开发工作</div>
+    <a class="social-icon-sprite social-icon-google_plus" target="_blank" href="https://plus.google.com/111725460519342364458"></a>
+    
+  </div>
+  <ul class="list user-dynamic">
+    <li>
+      <a href="/users/77cd37f5fa75/subscriptions">
+        <i class="iconfont ic-collection"></i> <span>他关注的专题/文集</span>
+</a>    </li>
+    <li>
+      <a href="/users/77cd37f5fa75/liked_notes">
+        <i class="iconfont ic-like"></i> <span>他喜欢的文章</span>
+</a>    </li>
+  </ul>
+  <!-- 专题和文集 -->
+  <div class="js-collection-and-notebook-container"></div>
+</div>
+
+  </div>
+</div>
+<div data-vcomp="side-tool"></div>
+
+    <script type="application/json" data-name="page-data">{"user_signed_in":false,"locale":"zh-CN","os":"windows","read_mode":"day","read_font":"font2","user":{"slug":"77cd37f5fa75"},"has_collections":false}</script>
+    
+    <script src="//cdn2.jianshu.io/assets/babel-polyfill-0d148d70f9a0d5c28ba2.js"></script>
+    <script src="//cdn2.jianshu.io/assets/web-base-0d148d70f9a0d5c28ba2.js"></script>
+<script src="//cdn2.jianshu.io/assets/web-0d148d70f9a0d5c28ba2.js"></script>
+    
+    <script src="//cdn2.jianshu.io/assets/web/pages/users/show/entry-0d148d70f9a0d5c28ba2.js"></script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35169517-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?0c0e9d9b1e7d617b3e6842e85b9fb068";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script>
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+  </body>
+</html>

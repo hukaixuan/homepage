@@ -14,8 +14,17 @@ class SitesSpiderItem(scrapy.Item):
     pass
 
 
-class JianshuItem(scrapy.Item):
+class PostItem(scrapy.Item):
+    user_id = scrapy.Field()
+    site_id = scrapy.Field()
     title = scrapy.Field()
     content = scrapy.Field()
-    likes = scrapy.Field()
     post_time = scrapy.Field()
+    origin_url = scrapy.Field()
+    img = scrapy.Field()
+
+
+
+
+
+

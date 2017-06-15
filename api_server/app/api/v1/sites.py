@@ -29,7 +29,7 @@ def get_site(id):
 
 
 @api.route('/sites', methods=['POST'])
-@auth.login_required
+# @auth.login_required
 @json
 def new_site():
     site = Site().import_data(request.get_json(force=True))
@@ -40,7 +40,7 @@ def new_site():
 
 
 @api.route('/sites/<int:id>', methods=['PUT'])
-@auth.login_required
+# @auth.login_required
 @json
 def edit_site(id):
     site = Site.query.get_or_404(id)
@@ -53,7 +53,7 @@ def edit_site(id):
 
 
 @api.route('/sites/<int:id>', methods=['DELETE'])
-@auth.login_required
+# @auth.login_required
 @json
 def delete_site(id):
     site = Site.query.get_or_404(id)

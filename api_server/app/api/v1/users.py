@@ -59,7 +59,7 @@ def edit_user(id):
 
 # 删除用户
 @api.route('/users/<int:id>', methods=['DELETE'])
-@auth.login_required
+# @auth.login_required
 @json
 def delete_user(id):
     user = User.query.get_or_404(id)

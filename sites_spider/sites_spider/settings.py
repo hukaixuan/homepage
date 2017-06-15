@@ -39,12 +39,16 @@ ROBOTSTXT_OBEY = False
 #TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
+# DEFAULT_REQUEST_HEADERS = {
+#     'accept': 'image/webp,*/*;q=0.8',
+#     'accept-language': 'zh-CN,zh;q=0.8',
+#     # 'referer': 'https://www.jianshu.com/',
+#     'user-agent': 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36',
+# }
 DEFAULT_REQUEST_HEADERS = {
-    'accept': 'image/webp,*/*;q=0.8',
-    'accept-language': 'zh-CN,zh;q=0.8',
-    'referer': 'https://www.jianshu.com/',
-    'user-agent': 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36',
+'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36(KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
 }
+
 
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html

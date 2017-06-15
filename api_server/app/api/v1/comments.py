@@ -23,7 +23,7 @@ def get_comment(post_id, id):
 
 
 @api.route('/posts/<int:post_id>/comments', methods=['POST'])
-@auth.login_required
+# @auth.login_required
 @json
 def new_comment(post_id):
     comment = Comment().import_data(request.get_json(force=True))
@@ -35,7 +35,7 @@ def new_comment(post_id):
 
 
 @api.route('/posts/<int:post_id>/comments/<int:id>', methods=['PUT'])
-@auth.login_required
+# @auth.login_required
 @json
 def edit_comment(post_id, id):
     comment = Comment.query.get_or_404(id)
@@ -49,7 +49,7 @@ def edit_comment(post_id, id):
 
 
 @api.route('/posts/<int:post_id>/comments/<int:id>', methods=['DELETE'])
-@auth.login_required
+# @auth.login_required
 @json
 def delete_comment(id):
     comment = Comment.query.get_or_404(id)

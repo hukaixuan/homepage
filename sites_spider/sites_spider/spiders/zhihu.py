@@ -24,13 +24,16 @@ class ZhihuSpider(scrapy.Spider):
 
     def first_page_parse(self, response):
         # 获取总共的回答数
-        post_num = int(response.selector.xpath('//*[@id="ProfileMain"]/div[1]/ul/li[2]/a/span/text()').extract()[2])
+        self.log('*******************')
+        self.log(response.url)
+        post_num = int(response.selector.xpath('//div[contains(@class, "ProfileMain-header")]/ul/li[2]/a/span/text()').extract()[0])
         # 计算页数(每页20篇回答)
         page_num = math.ceil(post_num/20)
         # 第一页的回答链接
         post_urls = response.selector.xpath('//h2[contains(@class,"ContentItem-title")]/a/@href').extract()
         # 添加未爬取的文章的URL
         post_urls = [self.base_url+post_url for post_url in post_urls]
+        self.log(post_urls)
         for post_url in post_urls_not_in_db(post_urls):
             yield scrapy.Request(post_url, self.per_post_parse)
         # 文章列表的URL
@@ -50,7 +53,8 @@ class ZhihuSpider(scrapy.Spider):
         item['site_id'] = self.site_id
         item['user_id'] = self.user_id
         item['title'] = response.selector.xpath('//h1[contains(@class, "QuestionHeader-title")]/text()').extract()[0]
-        item['post_time'] = response.selector.xpath('//div[contains(@class, "ContentItem-time")]/text()').extract()[0][4:]
+        post_time = response.selector.xpath('//div[contains(@class, "ContentItem-time")]/a//text()').extract()[0]
+        item['post_time'] = post_time[4:] 
         item['content'] = response.selector.xpath('//span[contains(@class, "RichText CopyrightRichText-richText")]').extract()[0]
         item['img'] = None
         item['origin_url'] = response.url

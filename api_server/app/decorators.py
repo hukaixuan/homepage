@@ -90,7 +90,7 @@ def _sort_query(model, query, sort_spec):
     return query
 
 
-def collection(model, name=None, max_per_page=10):
+def collection(model, name=None, max_per_page=100):
     """This decorator implements pagination, filtering, sorting and expanding
     for collections. The expected response from the decorated route is a
     SQLAlchemy query."""

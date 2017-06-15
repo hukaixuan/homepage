@@ -9,6 +9,7 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = 'mysql://root:'+os.environ.get('MYSQL_PWD')+'@localhost/homepage?charset=utf8mb4'
     USE_TOKEN_AUTH = True
+    # USE_TOKEN_AUTH = False
 
     # enable rate limits only if redis is running
     try:

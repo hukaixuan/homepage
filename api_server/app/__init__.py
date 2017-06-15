@@ -5,9 +5,12 @@ from .auth import auth
 from .decorators import json, etag
 from .errors import not_found, not_allowed
 from config import config
+from flask_cors import CORS, cross_origin
+
 
 def create_app(config_name=None):
     app = Flask(__name__)
+    CORS(app)
     if not config_name:
         config_name='default'
     app.config.from_object(config[config_name])
@@ -39,3 +42,5 @@ def create_app(config_name=None):
         return not_allowed()
 
     return app
+
+

@@ -7,7 +7,7 @@ from ... import auth
 
 
 @api.route('/labels', methods=['GET'])
-@etag
+# @etag
 @json
 @collection(Label)
 def get_labels():
@@ -15,7 +15,7 @@ def get_labels():
 
 
 @api.route('/labels/<int:id>', methods=['GET'])
-@etag
+# @etag
 @json
 def get_label(id):
     return Label.query.get_or_404(id)

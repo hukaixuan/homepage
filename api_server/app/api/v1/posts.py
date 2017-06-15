@@ -7,15 +7,15 @@ from ... import auth
 
 
 @api.route('/posts', methods=['GET'])
-@etag
+# @etag
 @json
 @collection(Post)
 def get_posts():
-    return Post.query
+    return Post.query.order_by(Post.timestamp.desc())
 
 
 @api.route('/posts/<int:id>', methods=['GET'])
-@etag
+# @etag
 @json
 def get_post(id):
     return Post.query.get_or_404(id)
@@ -26,7 +26,8 @@ def get_post(id):
 @json
 def new_post():
     post = Post().import_data(request.get_json(force=True))
-    post.user_id = g.user.id
+    # post.user_id = g.user.id
+    post.user_id = 1
     db.session.add(post)
     db.session.commit()
     return {}, 201, {'Location': post.get_url()}
@@ -50,8 +51,8 @@ def edit_post(id):
 @json
 def delete_post(id):
     post = Post.query.get_or_404(id)
-    if post.user_id != g.user.id:
-        return {"error":"Forbidden"}, 403
+    # if post.user_id != g.user.id:
+    #     return {"error":"Forbidden"}, 403
     db.session.delete(post)
     db.session.commit()
     return {}

@@ -63,7 +63,7 @@ class User(db.Model):
     def verify_password(self, password):
         return check_password_hash(self.password_hash, password)
 
-    def generate_auth_token(self, expires_in=3600):
+    def generate_auth_token(self, expires_in=24*60*60):
         s = Serializer(current_app.config['SECRET_KEY'], expires_in=expires_in)
         return s.dumps({'id': self.id}).decode('utf-8')
 
@@ -116,10 +116,12 @@ class Post(db.Model):
     site_id = db.Column(db.Integer)     # 通过爬虫爬取存储
     label_id = db.Column(db.Integer)
     title = db.Column(db.String(128))
+    img = db.Column(db.TEXT)
     content = db.Column(db.TEXT)
-    likes = db.Column(db.Integer)   # 通过爬虫爬取存储
+    # likes = db.Column(db.Integer)   # 通过爬虫爬取存储
     post_time = db.Column(db.DateTime)  # 通过爬虫爬取存储
     origin_url = db.Column(db.String(128)) # 文章原网址，通过爬虫爬取存储
+    state = db.Column(db.String(64))  # draft 草稿、publish 发布
     timestamp = db.Column(db.Integer, default=int(time.time()))
     
     @property
@@ -143,14 +145,18 @@ class Post(db.Model):
 
     def export_data(self):
         return {
+                    'id': self.id,
                     'self_url': self.get_url(),
+                    'origin_url': self.origin_url,
                     'author': self.author.get_url(),
                     'site': self.site.get_url() if self.site else None,
                     'label': self.label.get_url() if self.label else None,
+                    'label_name': self.label.name if self.label else None,
                     'title': self.title,
+                    'img': self.img,
                     'content': self.content,
-                    'likes': self.likes,
                     'post_time': self.post_time,
+                    'state': self.state,
                     'timestamp': self.timestamp,
                     'comments':[
                         {comment.get_url():[reply.get_url() for reply in comment.replies]} for comment in self.comments
@@ -164,6 +170,7 @@ class Post(db.Model):
             # self.site_id = data['site_id'] if data.get('site_id') else self.site_id
             self.title = data['title'] if data.get('title') else self.title
             self.content = data['content'] if data.get('content') else self.content
+            self.state = data['state'] if data.get('state') else self.state
             # self.post_time = data['post_time'] if data.get('post_time') else self.post_time
             self.timestamp = data['timestamp'] if data.get('timestamp') else self.timestamp
         except KeyError as e:
@@ -199,6 +206,7 @@ class Comment(db.Model):
 
     def export_data(self):
         return {
+                    'id': self.id,
                     'self_url': self.get_url(),
                     'author': self.author.get_url(),
                     'post': self.post.get_url(),
@@ -233,6 +241,7 @@ class Label(db.Model):
 
     def export_data(self):
         return {
+            'id': self.id,
             'self_url': self.get_url(),
             'name': self.name
         }
